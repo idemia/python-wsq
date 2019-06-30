@@ -68,3 +68,4 @@ To save a WSQ images, use one of:
     image.save(f,'WSQ')
     # or
     image.save('test.wsq')
+
