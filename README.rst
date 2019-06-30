@@ -57,7 +57,7 @@ To open a WSQ image:
 
     img = Image("my_image.wsq")
 
-To save a WSQ images, use one of::
+To save a WSQ images, use one of:
 
 .. code-block:: python
 
