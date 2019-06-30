@@ -11,3 +11,8 @@ install:
 
 test_script:
 - tox
+
+artifacts:
+- path: dist/*.whl
+  name: Wheels
+  type: File
