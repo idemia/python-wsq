@@ -1,0 +1,6 @@
+include lib/*
+include lib/commonnbis/include/*
+include lib/imgtools/include/*
+include wsq/tests/*
+include README.rst
+
