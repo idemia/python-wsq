@@ -14,6 +14,10 @@ WSQ
     :target: https://travis-ci.org/idemia/python-wsq
     :alt: Build Status (Travis CI)
 
+.. image:: https://img.shields.io/appveyor/ci/idemia/python-wsq/master.svg?label=Windows%20build
+   :target: https://ci.appveyor.com/project/idemia/python-wsq
+   :alt: AppVeyor CI build status (Windows)
+
 .. image:: https://codecov.io/gh/idemia/python-wsq/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/idemia/python-wsq
     :alt: Code Coverage Status (Codecov)
