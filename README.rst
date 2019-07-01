@@ -10,6 +10,10 @@ WSQ
     :target: https://pypi.org/project/wsq/
     :alt: Python 3.x
 
+.. image:: https://img.shields.io/pypi/v/:wsq.svg
+    :target: https://pypi.org/project/wsq/
+    :alt: v?.?
+
 .. image:: https://travis-ci.org/idemia/python-wsq.svg?branch=master
     :target: https://travis-ci.org/idemia/python-wsq
     :alt: Build Status (Travis CI)
