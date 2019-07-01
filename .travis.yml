@@ -12,6 +12,8 @@ matrix:
       env: TOXENV=py37
     - python: 3.6
       env: TOXENV=py36
+    - python: 3.5
+      env: TOXENV=py35
 
 install:
   - ./.travis/install
