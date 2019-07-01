@@ -17,9 +17,6 @@ if os.name=='posix':
 else:
     extra_compile_args="-D_POSIX_SOURCE -D__NBISLE__ -D__NBIS_PNG__ -D__MSYS__ -DTARGET_OS".split(' ')
 
-name = "wsq"
-version = "0.1"
-
 from setuptools import setup,Extension
 
 module_wsq = Extension('_wsq',
