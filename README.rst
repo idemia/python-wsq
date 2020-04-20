@@ -60,10 +60,10 @@ To open a WSQ image:
 
 .. code-block:: python
 
-    from import Image
+    from PIL import Image
     import wsq
 
-    img = Image("my_image.wsq")
+    img = Image.open("my_image.wsq")
 
 To save a WSQ images, use one of:
 
