@@ -14,8 +14,8 @@ WSQ
     :target: https://pypi.org/project/wsq/
     :alt: v?.?
 
-.. image:: https://travis-ci.org/idemia/python-wsq.svg?branch=master
-    :target: https://travis-ci.org/idemia/python-wsq
+.. image:: https://travis-ci.com/idemia/python-wsq.svg?branch=master
+    :target: https://travis-ci.com/idemia/python-wsq
     :alt: Build Status (Travis CI)
 
 .. image:: https://ci.appveyor.com/api/projects/status/github/idemia/python-wsq?branch=master&svg=true
