@@ -73,13 +73,27 @@ class WsqImageFile(ImageFile.ImageFile):
     def _open(self):
         # XXX: maybe reading the whole buffer is not necessary
         buf = self.fp.read()
-        # detect FFA2 (start of frame)
-        pos = buf.find(b'\xFF\xA2')
+        pos = 0
+        
+        # Analyze file and look for the Start of Frame marker
+        while pos<len(buf)-1:
+            marker = buf[pos:pos+2]
+            if marker in [b'\xFF\xA0', b'\xFF\xA1']:
+                pos += 2
+            elif marker==b'\xFF\xA2':
+                # Start of frame
+                # skip marker (2 bytes) + Frame length (2 bytes), A, B (1 byte each) = 6 bytes
+                y = buf[pos+6]*256 + buf[pos+7]
+                x = buf[pos+8]*256 + buf[pos+9]
+                break
+            elif marker in [b'\xFF\xA3', b'\xFF\xA4', b'\xFF\xA5', b'\xFF\xA6', b'\xFF\xA7', b'\xFF\xA8']:
+                l = buf[pos+2]*256 + buf[pos+3]
+                pos += 2+l
+            else:
+                raise IOError("Unknown marker found in WSQ image")
+                
         if pos<2:
             raise IOError("cannot decode WSQ image, missing SOF marker (FFA2)")
-        # skip marker (2 bytes) + Frame length (2 bytes), A, B (1 byte each) = 6 bytes
-        y = buf[pos+6]*256 + buf[pos+7]
-        x = buf[pos+8]*256 + buf[pos+9]
         # we now have Y & X
         self.fp.seek(0)
         self.mode = "L"
