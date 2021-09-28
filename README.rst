@@ -73,3 +73,15 @@ To save a WSQ images, use one of:
     # or
     image.save('test.wsq')
 
+To convert from another format:
+
+.. code-block:: python
+
+    from PIL import Image
+    import wsq
+
+    img = Image.open("test.png")
+    # Convert to grayscale image (important)
+    img = img.convert("L")
+    img.save("test.wsq")
+
