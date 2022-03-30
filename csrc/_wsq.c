@@ -2,6 +2,7 @@
 
 #include <wsq.h>
 
+#define PY_SSIZE_T_CLEAN 1
 #include "Python.h"
 
 int debug = 0;
@@ -11,7 +12,7 @@ compress(PyObject* self, PyObject* args)
 {
     // input args: buffer, cols, row, ratio
     unsigned char* buffer;
-    int buffer_size;
+    Py_ssize_t buffer_size;
     int cols,rows;
     float ratio=0.0;
     // output data
@@ -36,7 +37,7 @@ compress(PyObject* self, PyObject* args)
     }
 
     // compression fine, return buffer and achieved ratio
-    output = Py_BuildValue("y#",out_buffer,out_buffer_size);
+    output = Py_BuildValue("y#",out_buffer, (Py_ssize_t)out_buffer_size);
     // out_buffer is copied by Py_BuildValue, free the memory
     free(out_buffer);
     // ok
@@ -56,6 +57,7 @@ decompress(PyObject* self, PyObject* args)
     unsigned char* out_buffer;
     int ret_code;
     PyObject* output;
+    Py_ssize_t out_buffer_size;
 
     if (!PyArg_ParseTuple(args, "y#", &buffer,&buffer_size))
         return NULL;
@@ -72,7 +74,8 @@ decompress(PyObject* self, PyObject* args)
     }
 
     // compression fine, return buffer and dimensions
-    output = Py_BuildValue("y#iii",out_buffer,out_cols*out_rows,out_cols,out_rows,out_ppi);
+    out_buffer_size =  (Py_ssize_t)out_cols * (Py_ssize_t)out_rows;
+    output = Py_BuildValue("y#iii",out_buffer,out_buffer_size,out_cols,out_rows,out_ppi);
     // out_buffer is copied by Py_BuildValue, free the memory
     free(out_buffer);
     // ok
