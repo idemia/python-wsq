@@ -2,8 +2,11 @@
 Release History
 ===============
 
-0.4
----
+0.4 (2021-04-21)
+----------------
+
+- Add support for Python 3.9
+- Fix lookup of "start of frame" marker
 
 0.3 (2020-03-22)
 ----------------
