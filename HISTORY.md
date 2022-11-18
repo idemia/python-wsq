@@ -2,6 +2,11 @@
 Release History
 ===============
 
+0.5 (2022-11-18)
+----------------
+
+- Add support for Python 3.10 (thanks to Dan Nawrocki)
+
 0.4 (2021-04-21)
 ----------------
 
