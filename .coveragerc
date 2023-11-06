@@ -1,4 +1,3 @@
 [run]
 source=wsq
 omit = wsq/tests/*
-
