@@ -96,7 +96,7 @@ class WsqImageFile(ImageFile.ImageFile):
             raise IOError("cannot decode WSQ image, missing SOF marker (FFA2)")
         # we now have Y & X
         self.fp.seek(0)
-        self.mode = "L"
+        self._mode = "L"
         try:
             self.size = x,y
         except AttributeError:

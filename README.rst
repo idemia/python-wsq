@@ -47,7 +47,8 @@ Installation
 
 To install from source code::
 
-    python setup.py build
+    pip install build
+    python -m build
 
 The Python development library and C compiler must be available. For instance, for Ubuntu::
 
