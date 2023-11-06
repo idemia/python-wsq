@@ -14,13 +14,9 @@ WSQ
     :target: https://pypi.org/project/wsq/
     :alt: v?.?
 
-.. image:: https://travis-ci.com/idemia/python-wsq.svg?branch=master
-    :target: https://travis-ci.com/idemia/python-wsq
-    :alt: Build Status (Travis CI)
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/idemia/python-wsq?branch=master&svg=true
-   :target: https://ci.appveyor.com/project/olivier-heurtier-idemia/python-wsq
-   :alt: AppVeyor CI build status (Windows)
+.. image:: https://github.com/idemia/python-wsq/actions/workflows/main.yml/badge.svg
+    :target: https://github.com/idemia/python-wsq/actions/workflows/main.yml
+    :alt: Github action
 
 .. image:: https://codecov.io/gh/idemia/python-wsq/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/idemia/python-wsq
