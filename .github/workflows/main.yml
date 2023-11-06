@@ -19,6 +19,8 @@ jobs:
           python-version: ${{ matrix.python }}
 
       - name: Run tests
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECONV_TOKEN }}
         run: |
           python -m pip install tox
           python -m tox -e py
