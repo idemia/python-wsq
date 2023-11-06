@@ -33,6 +33,12 @@ class WSQTestCase(unittest.TestCase):
         with self.assertRaises(IOError):
             i.save(buf,'WSQ')
 
+    def test_good_mode(self):
+        # Create a color image and try to save it as a WSQ
+        i = PIL.Image.new("L",(100,100))
+        buf = io.BytesIO()
+        i.save(buf,'WSQ')
+
     def test_bad_image(self):
         with open(os.path.join(os.path.dirname(__file__),'test.wsq'),'rb') as f:
             buf = f.read()
