@@ -18,15 +18,20 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
 
-      - name: Run pytest
+      - name: Run tests
         run: |
           python -m pip install tox
           python -m tox -e py
+
+      - name: Build wheel
+        run: |
+          python -m pip install build
+          python -m build
 
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
         with:
           name: ${{matrix.os}}-wheel-${{ matrix.python }}
-          path: .tox/.tmp/package/1/wsq*.whl
+          path: dist/*.whl
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
