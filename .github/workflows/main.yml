@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: ["ubuntu-latest", "windows-latest"]
         python: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
@@ -24,7 +25,7 @@ jobs:
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
         with:
-          name: linux-wheel-${{ matrix.python-version }}
+          name: ${{matrix.os}}-wheel-${{ matrix.python }}
           path: dist/wsq*.whl
         # Use always() to always run this step to publish test results when there are test failures
         if: ${{ always() }}
