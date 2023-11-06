@@ -1,0 +1,30 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install tox and any other packages
+        run: pip install tox
+      - name: Run tox
+        # Run tox using the version of Python in `PATH`
+        run: tox -e py
+      - name: Upload pytest test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-wheel-${{ matrix.python-version }}
+          path: dist/wsq*.whl
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
