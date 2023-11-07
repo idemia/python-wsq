@@ -28,20 +28,15 @@ jobs:
           python -m pip install build
           python -m build
 
-      - name: Upload pytest test results
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: ${{matrix.os}}-wheel-${{ matrix.python }}
           path: dist/*.whl
-        # Use always() to always run this step to publish test results when there are test failures
-        if: ${{ always() }}
 
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: .tox/coverage.xml
-          #flags: unittests # optional
-          #name: codecov-umbrella # optional
-          #fail_ci_if_error: true # optional (default = false)
-          #verbose: true # optional (default = false)
+          name: python-wsq
         if: matrix.python == '3.11' && matrix.os == 'ubuntu-latest'
