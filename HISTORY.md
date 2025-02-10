@@ -2,6 +2,19 @@
 Release History
 ===============
 
+0.7 (2025-02-10)
+----------------
+
+- Add support for Python 3.13 (thanks to Marco De Donno)
+- Drop support of Python 3.8
+
+
+0.6 (2023-11-11)
+----------------
+
+- Support Pillow 10.1.0 and up to Python 3.12
+- Drop support of Python 3.7
+
 0.5 (2022-11-18)
 ----------------
 
