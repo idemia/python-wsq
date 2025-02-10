@@ -23,12 +23,12 @@ compress(PyObject* self, PyObject* args)
 
     if (!PyArg_ParseTuple(args, "y#iif", &buffer,&buffer_size,&rows,&cols,&ratio))
         return NULL;
-    ratio = 0.75;
+    ratio = 0.75;   // 15:1 fixed ratio (2.25==>5:1, .75==>15:1)
     // Call the compress algorithm
     out_buffer = NULL;
     ret_code = wsq_encode_mem(&out_buffer,&out_buffer_size, ratio,
                    buffer,cols,rows,
-                   1, -1, NULL);
+                   8, 500, NULL);
 
     if (ret_code!=0)
     {
