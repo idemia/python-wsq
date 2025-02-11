@@ -2,7 +2,7 @@
 Release History
 ===============
 
-0.7 (2025-02-10)
+0.7 (2025-02-11)
 ----------------
 
 - Add support for Python 3.13 (thanks to Marco De Donno)
