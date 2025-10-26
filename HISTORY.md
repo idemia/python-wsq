@@ -2,6 +2,12 @@
 Release History
 ===============
 
+0.8
+---
+
+- Add support for Python 3.14 (thanks to Marco De Donno)
+- Drop support of Python 3.9
+
 0.7 (2025-02-11)
 ----------------
 

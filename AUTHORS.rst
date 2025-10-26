@@ -10,5 +10,5 @@ subject to copyright protection and is in the public domain.
 Contributors
 ------------
 
-- Oivier Heurtier <olivier.heurtier@idemia.com> `@olivier-heurtier-idemia <https://github.com/olivier-heurtier-idemia>`_
+- Oivier Heurtier <olivier.heurtier@free.fr> `@olivier-heurtier <https://github.com/olivier-heurtier>`_
 
