@@ -55,7 +55,7 @@ decompress(PyObject* self, PyObject* args)
 {
     // input args: buffer, cols, row, ratio
     unsigned char* buffer;
-    int buffer_size;
+    Py_ssize_t buffer_size;
     // output data
     int out_cols,out_rows;
     int out_depth,out_ppi;
