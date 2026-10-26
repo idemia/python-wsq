@@ -1,5 +1,5 @@
 
-__version__ = '0.9'
+__version__ = '0.10a'
 __author__ = "Olivier Heurtier"
 __copyright__ = "IDEMIA"
 __license__ = "CeCILL-C"
