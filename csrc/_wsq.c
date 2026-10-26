@@ -23,6 +23,12 @@ compress(PyObject* self, PyObject* args)
 
     if (!PyArg_ParseTuple(args, "y#iif", &buffer,&buffer_size,&rows,&cols,&ratio))
         return NULL;
+    if (rows<0 || cols<0 || (Py_ssize_t)rows*(Py_ssize_t)cols>buffer_size)
+    {
+        PyErr_Format(PyExc_ValueError, "WSQ Error: buffer of %zd bytes too small for %dx%d image",
+                     buffer_size, cols, rows);
+        return NULL;
+    }
     ratio = 0.75;   // 15:1 fixed ratio (2.25==>5:1, .75==>15:1)
     // Call the compress algorithm
     out_buffer = NULL;
@@ -49,7 +55,7 @@ decompress(PyObject* self, PyObject* args)
 {
     // input args: buffer, cols, row, ratio
     unsigned char* buffer;
-    int buffer_size;
+    Py_ssize_t buffer_size;
     // output data
     int out_cols,out_rows;
     int out_depth,out_ppi;
