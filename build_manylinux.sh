@@ -6,7 +6,7 @@
 
 rm /src/dist/*
 
-for p in cp310-cp310 cp311-cp311 cp312-cp312 cp313-cp313 cp314-cp314
+for p in cp311-cp311 cp312-cp312 cp313-cp313 cp314-cp314 cp315-cp315
 do
     /opt/python/$p/bin/pip wheel /src -w /src/dist
     auditwheel repair --plat manylinux_2_28_x86_64 --only-plat -w /src/dist /src/dist/wsq-$1-$p-linux_x86_64.whl
