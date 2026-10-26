@@ -2,6 +2,13 @@
 Release History
 ===============
 
+0.9 (2026-10-26)
+----------------
+
+- Add support for Python 3.15
+- Drop support of Python 3.10
+- #13: Reject compress() buffers smaller than rows*cols
+
 0.8 (2025-10-26)
 ----------------
 
